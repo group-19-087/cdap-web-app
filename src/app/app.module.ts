@@ -72,6 +72,7 @@ import {
   MatDatepickerModule,
   MatNativeDateModule
  } from '@angular/material';
+import {UserProfileComponent} from './component/user-profile/user-profile.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -110,7 +111,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ExploreComponent,
     LoginComponent,
     LoginDropdownComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserProfileComponent
   ],
   imports: [
     CommonModule,
