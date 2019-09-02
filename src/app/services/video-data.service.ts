@@ -880,6 +880,8 @@ export class VideoDataService {
   private META_DATA_URL = environment.metaDataURL;  // URL to web api
   private META_DATA_SEARCH_URL = environment.medaDataSearchURL;
   private META_DATA_BY_STATUS = environment.reviewVideoURL;
+  private TOPIC_UPDATE_URL = environment.updateTopicsURL;
+  private UPDATE_STATUS_URL = environment.updateStatusURL
 
   constructor(private http: HttpClient) { }
 
@@ -958,6 +960,32 @@ export class VideoDataService {
           tap(_ => console.log(`fetched metadata of videos with status ${status}`)),
           catchError(this.handleError<any[]>('getVideo', []))
         );
+  }
+
+  updateTopics(id, topic_data) {
+    return this.http.put(`${this.TOPIC_UPDATE_URL}/${id}`, topic_data)
+      .pipe(map(data => {
+        console.log(data);
+        return JSON.stringify(data);
+      }));
+  }
+
+  updateQuestions(id, questions) {
+    return this.http.put(this.META_DATA_URL + `/${id}/` + 'questions', questions, {responseType: 'text'})
+      .pipe(
+        map(data => {
+          console.log(data);
+          return data;
+        })
+      );
+  }
+
+  updateStatus(id, status) {
+    return this.http.put(`${this.UPDATE_STATUS_URL}/${id}`, status)
+      .pipe(map(data => {
+        console.log(data);
+        return JSON.stringify(data);
+      }));
   }
 
   /**

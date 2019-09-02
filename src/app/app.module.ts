@@ -52,6 +52,7 @@ import { LoginDropdownComponent } from './component/login-dropdown/login-dropdow
 import { ModuleManagerComponent } from './component/module-manager/module-manager.component';
 import { VideoSearchResultComponent } from './component/video-search-result/video-search-result.component';
 import { CommentsComponent } from './component/comments/comments.component';
+import { TranscriptComponent} from './component/transcript/transcript.component';
 
 import { PlayerCurrentTimeService } from './services/player-current-time.service';
 import { SidebarModule } from 'ng-sidebar';
@@ -77,7 +78,9 @@ import {
   MatInputModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatRadioModule,
+  MatIconModule
  } from '@angular/material';
 import { SearchResultsComponent } from './layouts/search-results/search-results.component';
 import {UserProfileComponent} from './component/user-profile/user-profile.component';
@@ -126,7 +129,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     VideoSearchResultComponent,
     CommentsComponent,
     UserProfileComponent,
-    PlaylistComponent
+    PlaylistComponent,
+    TranscriptComponent
   ],
   imports: [
     CommonModule,
@@ -155,6 +159,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatRadioModule,
+    MatIconModule,
     TagInputModule
   ],
   providers: [
