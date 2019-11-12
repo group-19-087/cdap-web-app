@@ -20,9 +20,9 @@ export class ReviewVideoComponent implements OnInit {
   ngOnInit() {
     this.video = this.route.snapshot.data['video'];
     console.log('video>>', this.video);
-    this.http.get('assets/questions/mock-questions.json').map(data => data.json()).subscribe(data => {
-      this.questions = data;
-    });
+    // this.http.get('assets/questions/mock-questions.json').map(data => data.json()).subscribe(data => {
+    //   this.questions = data;
+    // });
   }
 
   openVerticallyCentered(content) {
@@ -30,7 +30,7 @@ export class ReviewVideoComponent implements OnInit {
   }
 
   publishVideo(){
-    this.videoDataService.updateStatus(this.video._id, {'status': 'published'}).subscribe(data =>{
+    this.videoDataService.updateStatus(this.video.id, {'status': 'published'}).subscribe(data =>{
       let json_data = JSON.parse(data);
       if (json_data.status === 200){
           this.router.navigate(['videoplayer/' + this.video.id]);

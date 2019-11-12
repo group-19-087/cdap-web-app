@@ -2,8 +2,9 @@
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
-const ec2url = 'http://ec2-13-235-87-37.ap-south-1.compute.amazonaws.com:3000/';
-// const ec2url = 'http://localhost:3000/';
+// const ec2url = 'http://ec2-35-154-98-108.ap-south-1.compute.amazonaws.com:3000/';
+// const ec2url = 'http://15.206.33.173:3000/';
+const ec2url = 'http://localhost:3000/';
 export const environment = {
   production: false,
   upload_url: ec2url + 'v1/videos/upload',
@@ -15,5 +16,6 @@ export const environment = {
   commentsURL: ec2url + 'v1/videos/update-comments',
   reviewVideoURL: ec2url + 'v1/videos/get-by-status',
   updateStatusURL: ec2url + 'v1/videos/update-status',
-  updateTopicsURL: ec2url + 'v1/videos/update-topics'
+  updateTopicsURL: ec2url + 'v1/videos/update-topics',
+  ec2url: ec2url
 };
